@@ -1,0 +1,10 @@
+
+###
+GET http://localhost:8080/test?maxCalories=800&number=1
+
+
+
+
+
+
+
