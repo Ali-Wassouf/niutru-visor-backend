@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package com.tyche.spoonacularapi.proto;
+
+option java_package = "com.tyche.spoonacularapi.proto";
+option java_outer_classname = "MealPlanProto";
+
+message MealPlan {
+    repeated DayMeals day_meal = 1;
+}
+
+message Nutrients {
+    double calories = 1;
+    double protien = 2;
+    double fat = 3;
+    double carbohydrates = 4;
+}
+
+message Meal {
+    int32 id = 1;
+    string title = 2;
+    int32 servings = 3;
+    int32 preparing_time_in_mins = 4;
+    string source_url = 5;
+}
+message DayMeals {
+    string day = 1;
+    repeated Meal meals = 2;
+    Nutrients nutrients = 3;
+}
