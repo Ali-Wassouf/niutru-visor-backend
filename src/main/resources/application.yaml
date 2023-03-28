@@ -1,3 +1,7 @@
-spoonacular:
-  api:
-    key: 
+spring:
+  profiles: 
+    active: local
+# spoonacular:
+#   api:
+#     key: 22a4d94ebd984e828844fc730fd9b628
+#   url: https://api.spoonacular.com

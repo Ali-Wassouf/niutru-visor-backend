@@ -1,4 +1,4 @@
-package com.tyche.spoonacularapi;
+package com.tyche.spoonacularapi.models;
 
 import java.util.List;
 import lombok.Data;

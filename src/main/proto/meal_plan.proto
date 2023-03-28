@@ -1,0 +1,70 @@
+syntax = "proto3";
+
+package com.tyche.spoonacularapi.proto;
+
+option java_package = "com.tyche.spoonacularapi.proto";
+option java_outer_classname = "DailyMealPlanProto";
+
+message DailyMealPlan {
+    repeated DayMeals day_meal = 1;
+}
+
+message DayMeals {
+    int32 day_number = 1;
+    repeated Meal meals = 2;
+}
+
+message Meal {
+    int32 id = 1;
+    string title = 2;
+    string cusine = 3;
+    int32 servings = 4;
+    double weight_per_serving = 5;
+    // A meal can have many types, Ex: MAIN_COURSE and LAUNCH.
+    repeated MealType meal_type = 6;
+    Nutrition nutrition = 7;
+    Recipe  recipe  = 8;
+    // A link to a webpage containing the meal info. 
+    string source_url = 9;
+}
+
+message Recipe {
+    string description = 1;
+    string cooking_instructions = 2;
+    repeated ShoppingItem shopping_list = 5;
+}
+
+message Nutrition {
+    double calories = 1;
+    double fat = 2;
+    double protein  = 3;
+    double carbs = 4;
+    double fiber = 5;
+    // A precentage of how healthy the meal is.
+    double nutrition_score = 6;
+}
+
+message ShoppingItem {
+    string name = 1;
+    oneof measure_unit {
+        int32 quantity = 2;
+        double weightGrams = 3;
+        double teaspoon = 4;
+        int32 cups = 5;
+        OtherMeasure other_measure = 6;
+    }
+    message OtherMeasure {
+        string measure_name = 1;
+        int32 quanitity = 2;
+    }
+    
+}
+
+enum  MealType {
+    TYPE_UNSPECIFIED = 0;
+    MAIN_COURSE = 1;
+    BREAKFAST = 2;
+    LAUNCH = 3;
+    DINNER = 4;
+    SNACK = 5;
+}

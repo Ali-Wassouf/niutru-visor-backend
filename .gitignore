@@ -31,3 +31,7 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### User added ###
+src/main/java/com/tyche/spoonacularapi/complex_search_response.json
+src/main/resources/application-local.yaml

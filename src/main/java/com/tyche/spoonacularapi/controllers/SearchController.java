@@ -1,13 +1,16 @@
-package com.tyche.spoonacularapi;
+package com.tyche.spoonacularapi.controllers;
 
-import java.util.Map;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.tyche.spoonacularapi.models.ComplexSearchResult;
+import com.tyche.spoonacularapi.services.SpoonacularComplexSearchService;
+//TODO(ehabe): Make this handler return the proto instead of ComplexSearchResult.
+// import com.tyche.spoonacularapi.proto.DailyMealPlanProto;
 
 @RestController
 @RequiredArgsConstructor
